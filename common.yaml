@@ -20,7 +20,7 @@ services:
       - filestore:/var/lib/odoo:z
 
   db:
-    image: ghcr.io/tecnativa/postgres-autoconf:13-alpine
+    image: docker.io/postgis/postgis:10-3.2-alpine
     shm_size: 4gb
     environment:
       POSTGRES_DB: *dbname

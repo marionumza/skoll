@@ -41,8 +41,8 @@ services:
     extends:
       file: common.yaml
       service: db
-    env_file:
-      - .docker/db-creation.env
+    #env_file:
+    #  - .docker/db-creation.env
     restart: unless-stopped
 
 networks:

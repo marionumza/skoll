@@ -1,0 +1,178 @@
+# See https://github.com/Tecnativa/doodba#optodoocustomsrcreposyaml
+./odoo:
+  defaults:
+    # Shallow repositories ($DEPTH_DEFAULT=1) are faster & thinner
+    # You may need a bigger depth when merging PRs (use $DEPTH_MERGE
+    # for a sane value of 100 commits)
+    depth: $DEPTH_DEFAULT
+  remotes:
+    ocb: https://github.com/OCA/OCB.git
+    odoo: https://github.com/odoo/odoo.git
+    openupgrade: https://github.com/OCA/OpenUpgrade.git
+  target: odoo $ODOO_VERSION
+  merges:
+    - odoo $ODOO_VERSION
+    # Example of a merge of the PR with the number <PR>
+    # - oca refs/pull/<PR>/head
+
+./ingadhoc-odoo-argentina:
+  defaults:
+    depth: $DEPTH_DEFAULT
+  remotes:
+    ingadhoc-odoo-argentina: https://github.com/ingadhoc/odoo-argentina.git
+  target: ingadhoc-odoo-argentina $ODOO_VERSION
+  merges:
+    - ingadhoc-odoo-argentina $ODOO_VERSION
+
+./ingadhoc-account-invoicing:
+  defaults:
+    depth: $DEPTH_DEFAULT
+  remotes:
+    ingadhoc-account-invoicing: https://github.com/ingadhoc/account-invoicing.git
+  target: ingadhoc-account-invoicing $ODOO_VERSION
+  merges:
+    - ingadhoc-account-invoicing $ODOO_VERSION
+
+./ingadhoc-account-financial-tools:
+  defaults:
+    depth: $DEPTH_DEFAULT
+  remotes:
+    ingadhoc-account-financial-tools: https://github.com/ingadhoc/account-financial-tools.git
+  target: ingadhoc-account-financial-tools $ODOO_VERSION
+  merges:
+    - ingadhoc-account-financial-tools $ODOO_VERSION
+
+./ingadhoc-account-payment:
+  defaults:
+    depth: $DEPTH_DEFAULT
+  remotes:
+    ingadhoc-account-payment: https://github.com/ingadhoc/account-payment.git
+  target: ingadhoc-account-payment $ODOO_VERSION
+  merges:
+    - ingadhoc-account-payment $ODOO_VERSION
+
+./ingadhoc-miscellaneous:
+  defaults:
+    depth: $DEPTH_DEFAULT
+  remotes:
+    ingadhoc-miscellaneous: https://github.com/ingadhoc/miscellaneous.git
+  target: ingadhoc-miscellaneous $ODOO_VERSION
+  merges:
+    - ingadhoc-miscellaneous $ODOO_VERSION
+
+./ingadhoc-project:
+  defaults:
+    depth: $DEPTH_DEFAULT
+  remotes:
+    ingadhoc-project: https://github.com/ingadhoc/project.git
+  target: ingadhoc-project $ODOO_VERSION
+  merges:
+    - ingadhoc-project $ODOO_VERSION
+
+./ingadhoc-odoo-argentina-ce:
+  defaults:
+    depth: $DEPTH_DEFAULT
+  remotes:
+    ingadhoc-odoo-argentina-ce: https://github.com/ingadhoc/odoo-argentina-ce.git
+  target: ingadhoc-odoo-argentina-ce $ODOO_VERSION
+  merges:
+    - ingadhoc-odoo-argentina-ce $ODOO_VERSION
+
+./ingadhoc-partner:
+  defaults:
+    depth: $DEPTH_DEFAULT
+  remotes:
+    ingadhoc-partner: https://github.com/ingadhoc/partner.git
+  target: ingadhoc-partner $ODOO_VERSION
+  merges:
+    - ingadhoc-partner $ODOO_VERSION
+
+./ingadhoc-website:
+  defaults:
+    depth: $DEPTH_DEFAULT
+  remotes:
+    ingadhoc-website: https://github.com/ingadhoc/website.git
+  target: ingadhoc-website $ODOO_VERSION
+  merges:
+    - ingadhoc-website $ODOO_VERSION
+
+./ingadhoc-multi-company:
+  defaults:
+    depth: $DEPTH_DEFAULT
+  remotes:
+    ingadhoc-multi-company: https://github.com/ingadhoc/multi-company.git
+  target: ingadhoc-multi-company $ODOO_VERSION
+  merges:
+    - ingadhoc-multi-company $ODOO_VERSION
+
+./ingadhoc-argentina-sale:
+  defaults:
+    depth: $DEPTH_DEFAULT
+  remotes:
+    ingadhoc-argentina-sale: https://github.com/ingadhoc/argentina-sale.git
+  target: ingadhoc-argentina-sale $ODOO_VERSION
+  merges:
+    - ingadhoc-argentina-sale $ODOO_VERSION
+
+./ingadhoc-purchase:
+  defaults:
+    depth: $DEPTH_DEFAULT
+  remotes:
+    ingadhoc-purchase: https://github.com/ingadhoc/purchase.git
+  target: ingadhoc-purchase $ODOO_VERSION
+  merges:
+    - ingadhoc-purchase $ODOO_VERSION
+
+./ingadhoc-sale:
+  defaults:
+    depth: $DEPTH_DEFAULT
+  remotes:
+    ingadhoc-sale: https://github.com/ingadhoc/sale.git
+  target: ingadhoc-sale $ODOO_VERSION
+  merges:
+    - ingadhoc-sale $ODOO_VERSION
+
+./ingadhoc-hr:
+  defaults:
+    depth: $DEPTH_DEFAULT
+  remotes:
+    ingadhoc-hr: https://github.com/ingadhoc/hr.git
+  target: ingadhoc-hr $ODOO_VERSION
+  merges:
+    - ingadhoc-hr $ODOO_VERSION
+
+./ingadhoc-account-analytic:
+  defaults:
+    depth: $DEPTH_DEFAULT
+  remotes:
+    ingadhoc-account-analytic: https://github.com/ingadhoc/account-analytic.git
+  target: ingadhoc-account-analytic $ODOO_VERSION
+  merges:
+    - ingadhoc-account-analytic $ODOO_VERSION
+
+./ingadhoc-stock:
+  defaults:
+    depth: $DEPTH_DEFAULT
+  remotes:
+    ingadhoc-stock: https://github.com/ingadhoc/stock.git
+  target: ingadhoc-stock $ODOO_VERSION
+  merges:
+    - ingadhoc-stock $ODOO_VERSION
+
+./ingadhoc-product:
+  defaults:
+    depth: $DEPTH_DEFAULT
+  remotes:
+    ingadhoc-product: https://github.com/ingadhoc/product.git
+  target: ingadhoc-product $ODOO_VERSION
+  merges:
+    - ingadhoc-product $ODOO_VERSION
+
+./spulec-freezegun:
+  defaults:
+    depth: $DEPTH_DEFAULT
+  remotes:
+    spulec-freezegun: https://github.com/spulec/freezegun.git
+  target: spulec-freezegun master
+  merges:
+    - spulec-freezegun master

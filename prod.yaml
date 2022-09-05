@@ -1,0 +1,69 @@
+version: "2.4"
+
+services:
+  odoo:
+    extends:
+      file: common.yaml
+      service: odoo
+    restart: unless-stopped
+    env_file:
+      - .docker/odoo.env
+      - .docker/db-access.env
+    environment:
+      DB_FILTER: "^prod"
+      DOODBA_ENVIRONMENT: "${DOODBA_ENVIRONMENT-prod}"
+      INITIAL_LANG: "es_AR"
+    depends_on:
+      - db
+    networks:
+      default:
+    labels:
+      doodba.domain.main: ""
+
+  db:
+    extends:
+      file: common.yaml
+      service: db
+    env_file:
+      - .docker/db-creation.env
+    restart: unless-stopped
+    networks:
+      default:
+      inverseproxy_shared:
+    labels:
+      traefik.enable: "true"
+      traefik.docker.network: "inverseproxy_shared"
+      traefik.tcp.services.skoll-13-0-prod-database.loadbalancer.server.port: 5432
+      traefik.skoll-13-0-prod-database-0.port: 5432
+      traefik.tcp.routers.skoll-13-0-prod-database-0.rule: Host()
+      traefik.tcp.routers.skoll-13-0-prod-database-0.service: skoll-13-0-prod-database
+      traefik.skoll-13-0-prod-database-1.port: 5432
+      traefik.tcp.routers.skoll-13-0-prod-database-1.rule: Host()
+      traefik.tcp.routers.skoll-13-0-prod-database-1.service: skoll-13-0-prod-database
+      traefik.skoll-13-0-prod-database-2.port: 5432
+      traefik.tcp.routers.skoll-13-0-prod-database-2.rule: Host()
+      traefik.tcp.routers.skoll-13-0-prod-database-2.service: skoll-13-0-prod-database
+      traefik.skoll-13-0-prod-database-3.port: 5432
+      traefik.tcp.routers.skoll-13-0-prod-database-3.rule: Host()
+      traefik.tcp.routers.skoll-13-0-prod-database-3.service: skoll-13-0-prod-database
+      traefik.skoll-13-0-prod-database-4.port: 5432
+      traefik.tcp.routers.skoll-13-0-prod-database-4.rule: Host()
+      traefik.tcp.routers.skoll-13-0-prod-database-4.service: skoll-13-0-prod-database
+      traefik.skoll-13-0-prod-database-5.port: 5432
+      traefik.tcp.routers.skoll-13-0-prod-database-5.rule: Host()
+      traefik.tcp.routers.skoll-13-0-prod-database-5.service: skoll-13-0-prod-database
+      traefik.skoll-13-0-prod-database-6.port: 5432
+      traefik.tcp.routers.skoll-13-0-prod-database-6.rule: Host()
+      traefik.tcp.routers.skoll-13-0-prod-database-6.service: skoll-13-0-prod-database
+      traefik.skoll-13-0-prod-database-7.port: 5432
+      traefik.tcp.routers.skoll-13-0-prod-database-7.rule: Host()
+      traefik.tcp.routers.skoll-13-0-prod-database-7.service: skoll-13-0-prod-database
+
+networks:
+  default:
+    driver_opts:
+      encrypted: 1
+
+volumes:
+  filestore:
+  db:

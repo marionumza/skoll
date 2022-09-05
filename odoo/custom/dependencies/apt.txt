@@ -1,0 +1,17 @@
+gcc
+libssl-dev
+libpq-dev
+libxml2-dev
+libxslt1-dev
+libldap2-dev
+libsasl2-dev
+libcups2-dev
+libssl1.1
+swig
+nodejs
+node-clean-css
+node-less
+sassc
+gcc
+libmariadb-dev-compat
+libmariadb-dev

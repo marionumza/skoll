@@ -17,9 +17,9 @@ services:
       file: common.yaml
       service: odoo
     restart: unless-stopped
-    env_file:
-      - .docker/odoo.env
-      - .docker/db-access.env
+    #env_file:
+    #  - .docker/odoo.env
+    #  - .docker/db-access.env
     environment:
       DB_FILTER: "^prod"
       DOODBA_ENVIRONMENT: "${DOODBA_ENVIRONMENT-prod}"
